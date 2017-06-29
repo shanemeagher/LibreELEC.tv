@@ -1,0 +1,23 @@
+From db73e98dc576bf7a95ba1d6f2fa0bbd7a98223e2 Mon Sep 17 00:00:00 2001
+From: shanemeagher <shanemeagher@outlook.com>
+Date: Tue, 27 Jun 2017 18:38:04 +0800
+Subject: [PATCH] Rust-Crypto fix for Intel "Westmere" CPU's
+
+See https://github.com/DaGenix/rust-crypto/issues/390 for details.
+---
+ Cargo.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Cargo.toml b/Cargo.toml
+index 5d64719..8dbf12a 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -37,7 +37,7 @@ num-traits      = "0.1.36"
+ protobuf        = "1.1"
+ rand            = "0.3.13"
+ rpassword       = "0.3.0"
+-rust-crypto     = "0.2.34"
++rust-crypto     = { git = "https://github.com/awmath/rust-crypto.git", branch = "avx2" }
+ serde           = "0.9.6"
+ serde_json      = "0.9.5"
+ serde_derive    = "0.9.6"
